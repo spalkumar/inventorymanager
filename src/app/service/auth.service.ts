@@ -36,13 +36,31 @@ export class AuthService {
     console.log('The get url === '+getURL);
     return this.http.get<User[]>(getURL).pipe(catchError(this.errorHandler));
   }
+  GetUserById(code: any): Observable<User[]>{
+    let getURL = this.apiurl+'?id='+code;
+    console.log('The get url === '+getURL);
+    return this.http.get<User[]>(getURL).pipe(catchError(this.errorHandler));
+  }
   CreateUser(inputdata: any): Observable<User>{
     return this.http.post<User>(this.apiurl, inputdata).pipe(catchError(this.errorHandler));
   }
   UpdateUser(code: any, inputdata: any): Observable<User>{
     return this.http.put<User>(this.apiurl+'/'+code, inputdata).pipe(catchError(this.errorHandler));
   }
+  UpdateUserbyId(code: any, inputdata: any): Observable<User>{
+    return this.http.put<User>(this.apiurl+'?id='+code, inputdata).pipe(catchError(this.errorHandler));
+  }
 
+  IsLoggedIn(){
+    return sessionStorage.getItem('username')!=null;
+  }
+  GetUserRole(){
+    return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():'';
+  }
+
+  GetAllRole(){
+    return this.http.get('http://localhost:3000/Status');
+  }
   errorHandler(error:any){
     let errorMessage = '';
     if(error.error instanceof ErrorEvent){
