@@ -9,7 +9,8 @@ import {catchError} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiurl = 'https://inventory-service-84ll.onrender.com/User';
+  // private apiurl = 'https://inventory-service-84ll.onrender.com/User';
+  private apiurl = 'http://localhost:3000/User';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -30,8 +31,10 @@ export class AuthService {
    * @param code 
    * @returns 
    */
-  GetUserByCode(code: any): Observable<User>{
-    return this.http.get<User>(this.apiurl+'/'+code).pipe(catchError(this.errorHandler));
+  GetUserByCode(code: any): Observable<User[]>{
+    let getURL = this.apiurl+'?name='+code;
+    console.log('The get url === '+getURL);
+    return this.http.get<User[]>(getURL).pipe(catchError(this.errorHandler));
   }
   CreateUser(inputdata: any): Observable<User>{
     return this.http.post<User>(this.apiurl, inputdata).pipe(catchError(this.errorHandler));
