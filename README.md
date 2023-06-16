@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+#User service is here: https://inventory-service-84ll.onrender.com/User
+# ng g c <<Component-name>>: This will generate a component folder. This component can be login, home etc
+# ng g s service/auth: This will handle the service communication over http or https for authentication
+# ng g g guard/auth: This will generate a guard which will verify if user is logged in or not
