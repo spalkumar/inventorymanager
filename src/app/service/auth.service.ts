@@ -9,8 +9,9 @@ import {catchError} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  // private apiurl = 'https://inventory-service-16ou.onrender.com/User';
-  private apiurl = 'http://localhost:3000/User';
+  // private apiurl = 'https://inventory-service-16ou.onrender.com/User'; // render
+  private apiurl = 'https://shy-pear-pike-fez.cyclic.app/User'; // cyclic
+  // private apiurl = 'http://localhost:3000/User';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'

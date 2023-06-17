@@ -8,7 +8,10 @@ import { Products } from '../products';
   providedIn: 'root'
 })
 export class ProductsService {
-  private productAPIURL = 'http://localhost:3000/Product';
+  // private productAPIURL = 'http://localhost:3000/Product';
+  // private productAPIURL = 'https://inventory-service-16ou.onrender.com/User'; // render
+   private productAPIURL = 'https://shy-pear-pike-fez.cyclic.app/Product'; // cyclic
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
