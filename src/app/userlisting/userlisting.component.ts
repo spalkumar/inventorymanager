@@ -45,7 +45,4 @@ export class UserlistingComponent {
 
   }
 
-  opendialog(){
-
-  }
 }

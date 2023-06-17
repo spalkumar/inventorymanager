@@ -13,7 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UserlistingComponent } from './userlisting/userlisting.component';
 import { UpdatepopupComponent } from './updatepopup/updatepopup.component';
-import { ProductsComponent } from './products/products.component'
+import { ProductsComponent } from './products/products.component';
+import { CreateproductpopupComponent } from './createproductpopup/createproductpopup.component'
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ProductsComponent } from './products/products.component'
     HomeComponent,
     UserlistingComponent,
     UpdatepopupComponent,
-    ProductsComponent
+    ProductsComponent,
+    CreateproductpopupComponent
   ],
   imports: [
     BrowserModule,

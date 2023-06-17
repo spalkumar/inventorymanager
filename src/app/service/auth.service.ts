@@ -42,7 +42,7 @@ export class AuthService {
     return this.http.get<User[]>(getURL).pipe(catchError(this.errorHandler));
   }
   CreateUser(inputdata: any): Observable<User>{
-    return this.http.post<User>(this.apiurl, inputdata).pipe(catchError(this.errorHandler));
+    return this.http.post<User>(this.apiurl, inputdata, this.httpOptions).pipe(catchError(this.errorHandler));
   }
   UpdateUser(code: any, inputdata: any): Observable<User>{
     return this.http.put<User>(this.apiurl+'/'+code, inputdata).pipe(catchError(this.errorHandler));
@@ -56,6 +56,9 @@ export class AuthService {
   }
   GetUserRole(){
     return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():'';
+  }
+  GetUserName(){
+    return sessionStorage.getItem('username')!=null?sessionStorage.getItem('username')?.toString():'';
   }
 
   GetAllRole(){
