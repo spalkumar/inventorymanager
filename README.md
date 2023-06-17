@@ -30,3 +30,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # ng g c <<Component-name>>: This will generate a component folder. This component can be login, home etc
 # ng g s service/auth: This will handle the service communication over http or https for authentication
 # ng g g guard/auth: This will generate a guard which will verify if user is logged in or not
+
+
+
+####### install on Github ###########
+git branch gh-pages
+git checkout gh-pages
+git push origin gh-pages
+npm i angular-cli-ghpages --save-dev
+ng build --configuration production --base-href https://spalkumar.github.io/inventorymanager/
+npx angular-cli-ghpages --dir=dist/inventorymanager
